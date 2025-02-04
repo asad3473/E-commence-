@@ -21,7 +21,7 @@ export default function Hero() {
             <h1 className="font-bold text-2xl sm:text-4xl md:text-5xl text-gray-900">
               Inspired by your fashion dream
             </h1>
-            <p className="mt-2 text-gray-700">
+            <p className="mt-2 text-white">
               Elevate your style with our premium suit collection. Designed for sophistication and comfort.
             </p>
             <Link to="/">

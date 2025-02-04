@@ -13,7 +13,17 @@
 }
 .hide{
     opacity: 0;
+    transition: all ease-in 0.3s;
 }
 .main:hover .hide{
     opacity: 1;
+}
+
+
+.textColor{
+    color: #153A5B;
+    
+}
+.bgColor{
+    background: #153A5B;
 }
