@@ -2,6 +2,7 @@ import { MdOutlineLocalGroceryStore } from "react-icons/md";
 import { CiHeart } from "react-icons/ci";
 
 const Store = () => {
+  
   return (
     <div>
       <div className="p-4">

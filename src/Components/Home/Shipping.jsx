@@ -16,13 +16,13 @@ export default function Shipping() {
         }
     ]
     return (
-        <div className=" mt-10 sm:mt-32 w-full sm:mb-20">
+        <div className=" mt-10 sm:mt-20 w-full sm:10">
 
-            <div className=" w-[90%] mx-auto  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3   gap-10  ">
+            <div className=" cursor-pointer w-[90%] mx-auto  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3   gap-10  ">
                 {
                     shiping.map((item, index) => (
-                        <div key={index} className="flex h-auto sm:h-[200px] bg-[#f7f8f8] p-3 flex-col justify-start  items-start relative hover:bg-[#4a606d] hover:text-white transition transform hover:scale-105 ">
-                            <div className="text-white bg-[#153A5B] text-xl absolute top-[-20px] sm:top-[-30px] p-2 sm:p-4 rounded-sm hover:rotate-20 ">
+                        <div key={index} className="flex h-auto sm:h-[200px] bg-[#f7f8f8] p-3 flex-col justify-start  items-start hover:rounded-xl relative hover:bg-[#4a606d86] hover:text-white transition transform hover:scale-105 ">
+                            <div className="text-black  text-xl absolute top-[-20px] sm:top-[-30px] p-2 sm:p-4 rounded-sm bg-[#ffcc00]  font-semibold hover:rounded-full hover:bg-[#153A5B] delay-300 hover:text-white transition hover:rotate-20 ">
                                 {item.icon}
                             </div>
                             <div className=" mt-3">

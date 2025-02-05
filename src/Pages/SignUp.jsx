@@ -1,6 +1,5 @@
-import { useState } from "react";
+import  { useState } from "react";
 import { Link } from "react-router-dom";
-
 function SignUp() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -13,13 +12,14 @@ function SignUp() {
     setPassword("");
   };
 
+
   return (
     <div
       className="min-h-screen flex items-center justify-center p-6 bg-cover bg-center"
       style={{ backgroundImage: "url('https://media.istockphoto.com/id/523157266/photo/blue-satin-cloth-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=KrkUYutTeMFkaNFT3Iinfk2vY5Tt7skJodhYK560_Ag=')" }}
     >
       <div className="bg-white bg-opacity-90 rounded-lg shadow-lg p-8 max-w-md w-full">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
+        <h2 className="text-3xl font-bold text-center textColor mb-6">
           SignUp
         </h2>
 
@@ -85,7 +85,7 @@ function SignUp() {
           <div className="flex justify-center mb-6">
             <button
               type="submit"
-              className="w-full py-3 px-6 bg-[#007aff] text-white font-semibold rounded-lg shadow-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
+              className="w-full py-3 px-6 cursor-pointer bg-[#ffcc00] text-black font-semibold rounded-lg shadow-md hover:bg-[#152A5b] focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out hover:text-white "
             >
               SignUp
             </button>
@@ -96,11 +96,12 @@ function SignUp() {
         <div className="text-center">
           <p className="text-sm text-gray-600">
             Already have an account?{" "}
-            <Link
-              to="/sign-in"
-              className="text-blue-600 hover:text-blue-700 font-semibold"
+            <Link 
+              to="/login"
+              
+              className="textColor hover:text-blue-700 font-semibold"
             >
-              Login here
+              <span >Login here</span>
             </Link>
           </p>
         </div>

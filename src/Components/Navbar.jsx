@@ -1,91 +1,78 @@
 import { Link } from "react-router-dom";
-
-import { FaBars, FaTimes, FaUser, FaUserPlus } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { BsCartPlus } from "react-icons/bs";
+import { FaRegUser } from "react-icons/fa6";
 import { useState } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const nav = [
+    { name: "Home", link: "/" },
+    { name: "Shop", link: "/store" },
+    { name: "Blogs", link: "/blogs" },
+    { name: "Contact", link: "/contact" },
+  ];
   return (
-    <nav className="p-4 bg-[#ffffff] text-[#007aff] shadow-md">
-      <div className="mx-[30px] flex justify-between items-center">
-        {/* Left Side - Mobile Menu Icon */}
-        <div className="md:hidden">
-          <button
-            className="text-[#007aff] focus:outline-none"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
-          </button>
+    <nav className="p-4 bg-white textColor shadow-md">
+      <div className="mx-6 flex justify-between items-center relative">
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden textColor focus:outline-none"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
+        </button>
+
+        {/* Logo */}
+        <div className="text-xl font-bold">
+          LARQ
         </div>
 
-        {/* Headings for larger screens */}
-        <div className="hidden md:flex space-x-6 text-lg font-bold">
-          <Link
-            to="/services"
-            className="relative after:block after:h-[2px] after:w-full after:bg-[#007aff] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
-          >
-            Services
-          </Link>
-          <Link
-            to="/shop"
-            className="relative after:block after:h-[2px] after:w-full after:bg-[#007aff] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
-          >
-            Shop
-          </Link>
-          <Link
-            to="/contact"
-            className="relative after:block after:h-[2px] after:w-full after:bg-[#007aff] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
-          >
-            Contact
-          </Link>
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex space-x-6 text-lg font-bold flex-1 justify-center">
+          {
+            nav.map((item) => (
+              <Link
+                key={item}
+                to={item.link}
+                className="textColor"
+              >
+                {item.name}
+              </Link>
+            ))}
         </div>
 
-        {/* Center - Logo */}
-        <div className="text-xl font-bold absolute left-1/2 transform -translate-x-1/2">
-          <span className="text-lg font-bold">LARQ</span>
-        </div>
-
-        {/* Right Side - Login & Sign Up Icons with Tooltips */}
+        {/* Icons */}
         <div className="flex space-x-4 items-center">
-          <div className="relative group">
-            <Link
-              to="/login"
-              className="text-[#007aff] hover:text-blue-500 transition text-[28px]"
-            >
-              <FaUser />
-            </Link>
-            <span className="absolute left-1/2 transform -translate-x-1/2 bottom-[-30px] bg-[#007aff] text-white text-xs rounded-md px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              Login
-            </span>
-          </div>
-
-          <div className="relative group">
-            <Link
-              to="/signup"
-              className="text-[#007aff] hover:text-blue-500 transition text-[30px]"
-            >
-              <FaUserPlus/>
-            </Link>
-            <span className="absolute left-1/2 transform -translate-x-1/2 bottom-[-35px] bg-[#007aff] text-white text-xs rounded-md px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              SignUp
-            </span>
-          </div>
+          {[{ icon: <BsCartPlus size={24} />, link: '/', label: 'AddCart' },
+          { icon: <FaRegUser size={22} />, link: '/login', label: 'Login' }].map((item, index) => (
+            <div key={index} className="relative group">
+              <Link to={item.link} className="textColor transition">
+                {item.icon}
+              </Link>
+              <span className="absolute left-1/2 transform -translate-x-1/2 bottom-[-35px] bgColor text-white text-xs rounded-md px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {item.label}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Mobile Menu (Headings with Links) */}
+      {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden mt-6 space-y-6 text-center text-lg font-bold">
-          <Link to="/services" className="block hover:text-blue-400">
-            Services
-          </Link>
-          <Link to="/shop" className="block hover:text-blue-400">
-            Shop
-          </Link>
-          <Link to="/contact" className="block hover:text-blue-400">
-            Contact
-          </Link>
+        <div className="md:hidden fixed top-0 left-0 h-full w-[40%] bg-white shadow-lg p-6 flex flex-col items-center pt-24 gap-16 text-lg font-bold z-50 transition-transform transform translate-x-0">
+          <button
+            className="absolute top-4 right-4 textColor focus:outline-none"
+            onClick={() => setIsOpen(false)}
+          >
+            <FaTimes size={24} />
+          </button>
+          {
+            nav.map((item) => (
+              <Link key={item} to={item.link} className="block hover:text-blue-400">
+                {item.name}
+              </Link>
+            ))}
         </div>
       )}
     </nav>

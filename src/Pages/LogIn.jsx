@@ -1,5 +1,6 @@
-import { useState } from "react";
+import  { useState } from "react";
 import { Link } from "react-router-dom";
+
 
 function LogIn() {
   const [username, setUsername] = useState("");
@@ -11,6 +12,8 @@ function LogIn() {
     setPassword("");
   };
 
+ 
+
   return (
     <>
       <div
@@ -18,7 +21,7 @@ function LogIn() {
         style={{ backgroundImage: "url('https://media.istockphoto.com/id/1171506418/photo/sea-wave-abstract-navy-blue-black-neon-pattern-moon-light-silk-wavy-dark-texture-night-beach.webp?a=1&b=1&s=612x612&w=0&k=20&c=-5II1smOdlrTpqREoAeqN4FRDRrau_WfkvYLPAkThGU=')" }}
       >
         <div className="bg-white bg-opacity-90 rounded-lg shadow-lg p-8 max-w-md w-full">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
+          <h2 className="text-3xl font-bold text-center textColor mb-6">
             Login
           </h2>
 
@@ -65,7 +68,7 @@ function LogIn() {
             <div className="flex justify-center mb-6">
               <button
                 type="submit"
-                className="w-full py-3 px-6 bg-[#007aff] text-white font-semibold rounded-lg shadow-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
+                className="w-full py-3 px-6 cursor-pointer bg-[#ffcc00] text-black hover:text-white font-semibold rounded-lg shadow-md hover:bg-[#152A5b] focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
               >
                 Login
               </button>
@@ -77,8 +80,8 @@ function LogIn() {
             <p className="text-sm text-gray-600">
               Dont have an account?{" "}
               <Link
-                to="/sign-up"
-                className="text-blue-600 hover:text-blue-700 font-semibold"
+                to='/signup'
+                className="textColor hover:text-blue-700 font-semibold"
               >
                 SignUp here
               </Link>
