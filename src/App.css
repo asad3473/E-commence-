@@ -1,0 +1,29 @@
+.main{
+    position: relative;
+    overflow: hidden;
+}
+.child{
+    position: absolute;
+    bottom: -100px;
+    transition: all ease-in 0.5s;
+}
+.main:hover .child{
+    bottom: 50px;
+    color: white;
+}
+.hide{
+    opacity: 0;
+    transition: all ease-in 0.3s;
+}
+.main:hover .hide{
+    opacity: 1;
+}
+
+
+.textColor{
+    color: #153A5B;
+    
+}
+.bgColor{
+    background: #153A5B;
+}
