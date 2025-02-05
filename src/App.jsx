@@ -8,6 +8,7 @@ import LogIn from './Pages/LogIn'
 import SignUp from './Pages/SignUp'
 import AllShops from './Components/Shop/AllShops'
 import Blogs from './Components/Blogs/Blogs'
+import ContactUs from './Components/Contact/ContactUs'
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
           <Route path='/store' element={<Store />} />
           <Route path='/shop' element={<AllShops/>} />
           <Route path='/signup' element={<SignUp/>} />
-          <Route path='/contact' element={'home'} />
+          <Route path='/contact' element={<ContactUs/>} />
           <Route path='/login' element={<LogIn/>} />
         </Routes>
         <Footter />

@@ -79,11 +79,11 @@ export default function ContactUs() {
         </div>
       </div>
 
-        {/* blue box >>>>>>>> */}
-        <div className="w-[150px] max-[651px]:hidden pt-[10px] rounded-xl p-[] h-[90px] bg-[#4272F9] absolute top-40 right-70 text-2xl leading-[2] max-[1100px]:right-60 max-[1100px]:w-[100px] max-[1100px]:h-[80px] max-[1100px]:text-[15px] max-[1200px]:h3 max-[1000px]:top-80  max-[1000px]:right-50  max-[930px]:top-60  max-[930px]:right-40   ">
-            <p className=" font-serif text-white text-2xl text-center font-bold"> Submit</p>
-            <p className=" text-white text-center"> Your Form </p>
-        </div>
+      {/* blue box >>>>>>>> */}
+      <div className="w-[150px] max-[651px]:hidden pt-[10px] rounded-xl p-[] h-[90px] bg-[#4272F9] absolute top-40 right-70 text-2xl leading-[2] max-[1100px]:right-60 max-[1100px]:w-[100px] max-[1100px]:h-[80px] max-[1100px]:text-[15px] max-[1200px]:h3 max-[1000px]:top-80  max-[1000px]:right-50  max-[930px]:top-60  max-[930px]:right-40   ">
+        <p className=" font-serif text-white text-2xl text-center font-bold"> Submit</p>
+        <p className=" text-white text-center"> Your Form </p>
+      </div>
 
     </div>
   );
