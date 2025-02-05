@@ -4,6 +4,7 @@ import Navbar from './Components/Navbar'
 import Footter from './Components/Footter'
 import Hero from './Components/Home/Hero'
 import Store from './Pages/Store'
+import ContactUs from './Components/Contact/ContactUs'
 
 function App() {
 
@@ -18,7 +19,7 @@ function App() {
           <Route path='/services' element={'home'} />
           <Route path='/store' element={<Store />} />
           <Route path='/shop' element={'home'} />
-          <Route path='/contact' element={'home'} />
+          <Route path='/ContactUs' element={<ContactUs/>} />
         </Routes>
         <Footter />
       </BrowserRouter>
