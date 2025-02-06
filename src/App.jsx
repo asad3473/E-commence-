@@ -8,9 +8,13 @@ import LogIn from './Pages/LogIn';
 import SignUp from './Pages/SignUp';
 import AllShops from './Components/Shop/AllShops';
 import Blogs from './Components/Blogs/Blogs';
+import Blogss from './AdminDashboard/Page/Blogss';
 import ContactUs from './Components/Contact/ContactUs';
 import AddCart from './Pages/AddCart';
 import Admin from './AdminDashboard/Components/Admin';
+import Orders from './AdminDashboard/Page/Orders';
+import Products from './AdminDashboard/Page/Products';
+import Users from './AdminDashboard/Page/Users';
 
 function MainLayout() {
   return (
@@ -44,6 +48,10 @@ const router = createBrowserRouter([
     element: <AdminLayout />,
     children: [
       { path: '/admin', element: <Admin /> },
+      { path: '/admin/blog', element: <Blogss /> },
+      { path: '/admin/order', element: <Orders /> },
+      { path: '/admin/product', element: <Products /> },
+      { path: '/admin/user', element: <Users /> },
     ],
   },
 ]);
