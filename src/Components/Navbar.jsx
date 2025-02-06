@@ -44,13 +44,13 @@ const Navbar = () => {
 
         {/* Icons */}
         <div className="flex space-x-4 items-center">
-          {[{ icon: <BsCartPlus size={24} />, link: '/', label: 'AddCart' },
+          {[{ icon: <BsCartPlus size={24} />, link: '/cart', label: 'AddCart' },
           { icon: <FaRegUser size={22} />, link: '/login', label: 'Login' }].map((item, index) => (
             <div key={index} className="relative group">
               <Link to={item.link} className="textColor transition">
                 {item.icon}
               </Link>
-              <span className="absolute left-1/2 transform -translate-x-1/2 bottom-[-35px] bgColor text-white text-xs rounded-md px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span className="absolute left-1/2 z-20 transform -translate-x-1/2 bottom-[-35px] bgColor text-white text-xs rounded-md px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 {item.label}
               </span>
             </div>

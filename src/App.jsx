@@ -9,6 +9,7 @@ import SignUp from './Pages/SignUp'
 import AllShops from './Components/Shop/AllShops'
 import Blogs from './Components/Blogs/Blogs'
 import ContactUs from './Components/Contact/ContactUs'
+import AddCart from './Pages/AddCart'
 
 function App() {
 
@@ -26,6 +27,8 @@ function App() {
           <Route path='/signup' element={<SignUp/>} />
           <Route path='/contact' element={<ContactUs/>} />
           <Route path='/login' element={<LogIn/>} />
+          <Route path='/login' element={<LogIn/>} />
+          <Route path='/cart' element={<AddCart/>} />
         </Routes>
         <Footter />
       </BrowserRouter>
