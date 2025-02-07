@@ -1,9 +1,12 @@
+import { useState } from "react";
+import Product_Login from "./Product_Login";
+
 export default function Products() {
-  let Card_Array = [
+  const [Card_Array, setCard_Array] = useState([
     {
       img: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHByb2R1Y3R8ZW58MHx8MHx8fDA%3D",
       title: "Product 1",
-      description: "This is Description About the product",
+      description: "Amazing Watch",
       price: "$232"
     },
     {
@@ -36,26 +39,32 @@ export default function Products() {
       description: "High-quality product",
       price: "$275"
     }
-  ];
+  ]);
+
+  const Del_Card = (index) => {
+    setCard_Array(Card_Array.filter((_, i) => i !== index));
+  };
 
   return (
     <div className="w-full min-h-screen flex justify-center items-center p-4">
-      <div className="w-[80%] p-6 flex flex-col gap-6 items-center 
-        max-[950px]:mt-[100px] max-[950px]:mb-[100px] max-[670px]:gap-12">
-          <h1 className="text-4xl font-bold text-gray-800">Our Products</h1>
-        
+      <div className="w-[80%] p-6 flex flex-col gap-6 items-center max-[950px]:mt-[100px] max-[950px]:mb-[100px] max-[670px]:gap-12">
+        <h1 className="text-4xl font-bold text-gray-800">Our Products</h1>
+
         {/* Cards Container */}
         <div className="w-full flex flex-wrap justify-center gap-6">
-          
           {Card_Array.map((card, index) => (
-            <div 
-              key={index} 
-              className="w-[250px] h-[350px] bg-white shadow-md shadow-blue-500 
-              transform hover:scale-105 transition duration-400 rounded-lg overflow-hidden"
+            <div
+              key={index}
+              className="w-[250px] h-[350px] bg-white shadow-md shadow-blue-500 transform hover:scale-105 transition duration-400 rounded-lg overflow-hidden"
             >
               <div className="img w-full h-[180px]">
-                <img src={card.img} alt="Product" className="w-full h-full object-cover rounded-sm" />
+                <img
+                  src={card.img}
+                  alt="Product"
+                  className="w-full h-full object-cover rounded-sm"
+                />
               </div>
+              {/* Card Content >>>>>>>> */}
               <div className="card-content flex flex-col items-center justify-center text-center p-3">
                 <h1 className="text-xl font-bold">{card.title}</h1>
                 <p className="text-sm text-gray-600">{card.description}</p>
@@ -65,14 +74,17 @@ export default function Products() {
                 <button className="px-4 py-2 bg-amber-700 text-white rounded-lg shadow-md hover:bg-amber-600 transition font-bold text-sm">
                   Edit
                 </button>
-                <button className="px-4 py-2 bg-red-600 text-white rounded-lg shadow-md hover:bg-red-500 transition font-bold text-sm">
+                {/* Delete Button */}
+                <button
+                  onClick={() => Del_Card(index)}
+                  className="px-4 py-2 bg-red-600 text-white rounded-lg shadow-md hover:bg-red-500 transition font-bold text-sm"
+                >
                   Delete
                 </button>
               </div>
             </div>
           ))}
         </div>
-
       </div>
     </div>
   );
