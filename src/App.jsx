@@ -15,6 +15,8 @@ import Admin from './AdminDashboard/Components/Admin';
 import Orders from './AdminDashboard/Page/Orders';
 import Products from './AdminDashboard/Page/Products';
 import Users from './AdminDashboard/Page/Users';
+import LoginProduct from './AdminDashboard/Page/LoginProduct';
+
 
 function MainLayout() {
   return (
@@ -51,7 +53,7 @@ const router = createBrowserRouter([
       { path: '/admin/blog', element: <Blogss /> },
       { path: '/admin/order', element: <Orders /> },
       { path: '/admin/product', element: <Products /> },
-      { path: '/admin/Product_Login', element: <Product_Login /> },
+      { path: '/admin/LoginProduct', element: <LoginProduct /> },
       { path: '/admin/user', element: <Users /> },
     ],
   },
